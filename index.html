@@ -195,6 +195,127 @@ footer a:hover { color: white; }
   .pricing-card { padding: 36px 24px; }
   .cta-section { padding: 48px 24px; margin: 0 12px 48px; }
 }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 64px auto 0;
+  max-width: 1000px;
+}
+.pricing-card-new {
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 40px 32px;
+  text-align: center;
+  position: relative;
+}
+.pricing-card-new.featured {
+  border-color: var(--orange);
+  transform: scale(1.03);
+}
+.pricing-card-new.featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 24px 24px 0 0;
+}
+.popular-badge {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.plan-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.plan-limit {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.plan-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.plan-period {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.plan-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 32px;
+}
+.plan-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.85);
+}
+.plan-features li::before {
+  content: '✓';
+  color: var(--orange);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.plan-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.plan-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.plan-btn-primary {
+  background: var(--orange);
+  color: white;
+}
+.plan-btn-secondary {
+  background: rgba(255,107,0,0.1);
+  color: var(--orange);
+  border: 1px solid rgba(255,107,0,0.3);
+}
+.plan-trial {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card-new.featured {
+    transform: scale(1);
+  }
+}
 </style>
 </head>
 <body>
@@ -366,24 +487,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="section" style="text-align:center">
   <div class="section-label">Fiyatlandırma</div>
-  <h2 class="section-title">Şeffaf,<br>tek fiyat</h2>
-  <p class="section-sub" style="margin:0 auto">Gizli ücret yok. Kurulum ücreti yok.</p>
-  <div class="pricing-card">
-    <div class="pricing-badge">Profesyonel Plan</div>
-    <div class="pricing-name">Her şey dahil</div>
-    <div class="pricing-price">₺750</div>
-    <div class="pricing-period">aylık · KDV dahil</div>
-    <ul class="pricing-features">
-      <li>Sınırsız ürün eşleştirme</li>
-      <li>Sınırsız yorum gösterimi</li>
-      <li>Fotoğraflı yorumlar</li>
-      <li>Haftalık otomatik güncelleme</li>
-      <li>Otomatik kurulum</li>
-      <li>Renk, hız & düzen özelleştirme</li>
-      <li>E-posta destek</li>
-    </ul>
-    <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
-    <p class="pricing-trial">7 gün ücretsiz · İstediğiniz zaman iptal edebilirsiniz</p>
+  <h2 class="section-title">Planlar</h2>
+  <div class="pricing-grid">
+
+    <!-- Başlangıç -->
+    <div class="pricing-card-new">
+      <div class="plan-name">Başlangıç</div>
+      <div class="plan-limit">100 adete kadar yorum</div>
+      <div class="plan-price">₺399</div>
+      <div class="plan-period">aylık · KDV dahil</div>
+      <ul class="plan-features">
+        <li>100 adete kadar yorum gösterimi</li>
+        <li>Slider widget</li>
+        <li>Yıldız puanı gösterimi</li>
+        <li>Fotoğraflı yorumlar</li>
+        <li>Otomatik kurulum</li>
+        <li>7 gün ücretsiz deneme</li>
+      </ul>
+      <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
+         class="plan-btn plan-btn-secondary"
+         target="_blank"
+         onclick="gtag('event','plan_click',{'event_label':'baslangic'});fbq('track','InitiateCheckout');">
+        Hemen Başla →
+      </a>
+      <p class="plan-trial">7 gün ücretsiz · İstediğin zaman iptal</p>
+    </div>
+
+    <!-- Büyüme (featured) -->
+    <div class="pricing-card-new featured">
+      <div class="popular-badge">En Popüler</div>
+      <div class="plan-name">Büyüme</div>
+      <div class="plan-limit">300 adete kadar yorum</div>
+      <div class="plan-price">₺599</div>
+      <div class="plan-period">aylık · KDV dahil</div>
+      <ul class="plan-features">
+        <li>300 adete kadar yorum gösterimi</li>
+        <li>Slider widget</li>
+        <li>Yıldız puanı gösterimi</li>
+        <li>Fotoğraflı yorumlar</li>
+        <li>Otomatik kurulum</li>
+        <li>7 gün ücretsiz deneme</li>
+      </ul>
+      <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
+         class="plan-btn plan-btn-primary"
+         target="_blank"
+         onclick="gtag('event','plan_click',{'event_label':'buyume'});fbq('track','InitiateCheckout');">
+        Hemen Başla →
+      </a>
+      <p class="plan-trial">7 gün ücretsiz · İstediğin zaman iptal</p>
+    </div>
+
+    <!-- Profesyonel -->
+    <div class="pricing-card-new">
+      <div class="plan-name">Profesyonel</div>
+      <div class="plan-limit">Sınırsız yorum</div>
+      <div class="plan-price">₺799</div>
+      <div class="plan-period">aylık · KDV dahil</div>
+      <ul class="plan-features">
+        <li>Sınırsız yorum gösterimi</li>
+        <li>Slider widget</li>
+        <li>Yıldız puanı gösterimi</li>
+        <li>Fotoğraflı yorumlar</li>
+        <li>Otomatik kurulum</li>
+        <li>7 gün ücretsiz deneme</li>
+      </ul>
+      <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
+         class="plan-btn plan-btn-secondary"
+         target="_blank"
+         onclick="gtag('event','plan_click',{'event_label':'profesyonel'});fbq('track','InitiateCheckout');">
+        Hemen Başla →
+      </a>
+      <p class="plan-trial">7 gün ücretsiz · İstediğin zaman iptal</p>
+    </div>
+
   </div>
 </section>
 
