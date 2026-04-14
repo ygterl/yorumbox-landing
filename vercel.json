@@ -1,3 +1,6 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/trendyol-yorum-ikas", "destination": "/trendyol-yorum-ikas.html" }
+  ]
 }
