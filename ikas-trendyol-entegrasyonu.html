@@ -83,7 +83,226 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <main style="max-width:800px;margin:120px auto 80px;padding:0 24px;">
-  <!-- ICERIK GELECEK -->
+  <div style="font-size:13px;color:#555;margin-bottom:32px;">
+    <a href="/" style="color:#555;text-decoration:none;">Yorumbox</a>
+    <span style="margin:0 8px;">›</span>
+    <span>Rehber</span>
+  </div>
+
+  <div style="font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#FF6B00;margin-bottom:16px;font-weight:600;">Rehber</div>
+
+  <h1 style="font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.15;margin-bottom:20px;">
+    ikas Trendyol Entegrasyonu: Eksiksiz Kılavuz
+  </h1>
+
+  <p style="font-size:15px;color:#555;margin-bottom:24px;">Son güncelleme: Nisan 2025 · 6 dakika okuma</p>
+
+  <p style="font-size:17px;line-height:1.8;margin-bottom:48px;color:rgba(255,255,255,0.85);">
+    ikas mağazanızı Trendyol ile entegre etmek istiyorsanız doğru yerdesiniz. Bu rehberde ikas Trendyol entegrasyonunun ne olduğunu, nasıl kurulduğunu ve size ne kazandırdığını öğreneceksiniz. Yorumbox ile bu entegrasyonu 5 dakikada, kod yazmadan gerçekleştirebilirsiniz.
+  </p>
+
+  <div style="height:1px;background:rgba(255,255,255,0.08);margin-bottom:48px;"></div>
+
+  <h2 style="font-size:28px;font-weight:700;margin-bottom:16px;">
+    ikas Trendyol Entegrasyonu Nedir?
+  </h2>
+  <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:48px;">
+    ikas Trendyol entegrasyonu, Trendyol'daki ürün yorumlarınızı ikas mağazanızda göstermenizi sağlayan bir bağlantıdır. Yorumbox uygulaması bu iki platform arasında köprü kurarak Trendyol'daki gerçek müşteri yorumlarınızı ikas ürün sayfalarınızda slider widget olarak sunar. Böylece Trendyol'da yıllarca biriktirdiğiniz sosyal kanıtı ikas mağazanızda da kullanabilirsiniz.
+  </p>
+
+  <div style="height:1px;background:rgba(255,255,255,0.08);margin-bottom:48px;"></div>
+
+  <h2 style="font-size:28px;font-weight:700;margin-bottom:24px;">
+    Entegrasyon İçin Neler Gerekir?
+  </h2>
+
+  <div style="background:#1a1a1a;border:1px solid rgba(255,107,0,0.2);border-radius:16px;padding:28px;margin-bottom:48px;">
+    <ul style="list-style:none;padding:0;">
+      <li style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:15px;display:flex;align-items:center;gap:12px;">
+        <span style="color:#FF6B00;font-weight:700;">✓</span> Aktif bir ikas mağazası
+      </li>
+      <li style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:15px;display:flex;align-items:center;gap:12px;">
+        <span style="color:#FF6B00;font-weight:700;">✓</span> Trendyol satıcı hesabı
+      </li>
+      <li style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:15px;display:flex;align-items:center;gap:12px;">
+        <span style="color:#FF6B00;font-weight:700;">✓</span> Trendyol API bilgileri (Satıcı No, API Key, API Secret)
+      </li>
+      <li style="padding:12px 0;font-size:15px;display:flex;align-items:center;gap:12px;">
+        <span style="color:#FF6B00;font-weight:700;">✓</span> Yorumbox uygulaması (ikas App Store'dan ücretsiz)
+      </li>
+    </ul>
+  </div>
+
+  <h2 style="font-size:28px;font-weight:700;margin-bottom:32px;">
+    ikas Trendyol Entegrasyonu Nasıl Yapılır?
+  </h2>
+
+  <div style="display:flex;gap:20px;margin-bottom:40px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:#FF6B00;color:white;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+    <div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Yorumbox'ı ikas'a Kurun</h3>
+      <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.8);">
+        ikas yönetici panelinizde Uygulamalar → Uygulama Mağazası'na gidin. "Yorumbox" arayın ve "Ücretsiz Dene" butonuna tıklayın. Uygulama otomatik kurulur.
+      </p>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:20px;margin-bottom:40px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:#FF6B00;color:white;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+    <div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Trendyol API Bağlantısını Yapın</h3>
+      <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:12px;">
+        Yorumbox Ayarlar sekmesinde Satıcı No, API Key ve API Secret bilgilerinizi girin. API bilgilerini nereden alacağınızı bilmiyorsanız <a href="/entegrasyon" style="color:#FF6B00;">entegrasyon rehberimize</a> bakın.
+      </p>
+      <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
+        target="_blank"
+        style="display:inline-flex;align-items:center;gap:8px;background:#FF6B00;color:white;text-decoration:none;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;"
+        onclick="gtag('event','conversion_button_click',{'event_category':'engagement','event_label':'entegrasyon_kılavuz'});fbq('track','Lead');">
+        7 Gün Ücretsiz Başla →
+      </a>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:20px;margin-bottom:40px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:#FF6B00;color:white;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+    <div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Ürünleri Eşleştirin</h3>
+      <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.8);">
+        Ürünler sekmesinde Trendyol ürünlerinizi ikas ürünlerinizle eşleştirin. "Otomatik Eşleştir" butonu isim benzerliğine göre otomatik eşleştirme yapar.
+      </p>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:20px;margin-bottom:40px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:#FF6B00;color:white;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+    <div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Yorumları Seçin</h3>
+      <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.8);">
+        "+Yorum Ekle" butonuyla Trendyol yorumlarını görüntüleyin. Göstermek istediklerinizi seçip "Kaydet" butonuna basın.
+      </p>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:20px;margin-bottom:48px;align-items:flex-start;">
+    <div style="width:40px;height:40px;border-radius:50%;background:#FF6B00;color:white;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+    <div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Widget Yayında</h3>
+      <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.8);">
+        Seçilen yorumlar ikas ürün sayfalarınızda slider widget olarak otomatik görünür. Ayarlar sekmesinden renk ve hız özelleştirmesi yapabilirsiniz.
+      </p>
+    </div>
+  </div>
+
+  <div style="height:1px;background:rgba(255,255,255,0.08);margin-bottom:48px;"></div>
+
+  <h2 style="font-size:28px;font-weight:700;margin-bottom:24px;">
+    ikas Trendyol Entegrasyonunun Faydaları
+  </h2>
+
+  <h3 style="font-size:18px;font-weight:600;margin-bottom:12px;color:#FF6B00;">Sosyal Kanıt ile Dönüşüm Artar</h3>
+  <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:24px;">
+    Tüketicilerin %93'ü satın almadan önce yorumları inceler. Trendyol yorumlarınızı ikas'ta göstererek ziyaretçilerin güvenini kazanın ve dönüşüm oranınızı artırın.
+  </p>
+
+  <h3 style="font-size:18px;font-weight:600;margin-bottom:12px;color:#FF6B00;">Trendyol Yorumları ikas'ta Değerlenir</h3>
+  <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:24px;">
+    Trendyol'da yıllarca biriktirdiğiniz yorumlar artık sadece Trendyol'a değil, ikas mağazanıza da katkı sağlar. İki kanalda birden sosyal kanıt oluşturursunuz.
+  </p>
+
+  <h3 style="font-size:18px;font-weight:600;margin-bottom:12px;color:#FF6B00;">Otomatik Güncelleme ile İş Yükü Azalır</h3>
+  <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:48px;">
+    Haftalık otomatik güncelleme ile Trendyol'daki yeni yorumlar ikas mağazanıza otomatik eklenir. Manuel müdahale gerekmez.
+  </p>
+
+  <div style="background:#FF6B00;border-radius:20px;padding:48px;text-align:center;margin-bottom:64px;">
+    <h2 style="font-size:28px;font-weight:700;margin-bottom:16px;">
+      ikas Trendyol Entegrasyonunu Hemen Deneyin
+    </h2>
+    <p style="font-size:16px;opacity:0.9;margin-bottom:28px;">
+      7 gün ücretsiz · Otomatik kurulum · Kod gerekmez
+    </p>
+    <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
+      target="_blank"
+      style="display:inline-block;background:white;color:#FF6B00;text-decoration:none;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:700;"
+      onclick="gtag('event','conversion_button_click',{'event_category':'engagement','event_label':'entegrasyon_kılavuz_cta'});fbq('track','Lead');">
+      Ücretsiz Dene →
+    </a>
+  </div>
+
+  <div style="height:1px;background:rgba(255,255,255,0.08);margin-bottom:48px;"></div>
+
+  <h2 style="font-size:28px;font-weight:700;margin-bottom:32px;">Sık Sorulan Sorular</h2>
+
+  <div style="margin-bottom:64px;">
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:20px 0;">
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:10px;">ikas Trendyol entegrasyonu ücretli mi?</h3>
+      <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;">
+        Yorumbox ₺399'dan başlayan planlarla sunulmaktadır. 7 gün ücretsiz deneme mevcuttur, kredi kartı gerekmez.
+      </p>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:20px 0;">
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:10px;">Entegrasyon kurulumu ne kadar sürer?</h3>
+      <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;">
+        Yaklaşık 5 dakika. Kod bilgisi gerekmez, kurulum tamamen otomatiktir.
+      </p>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:20px 0;">
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:10px;">Trendyol API bilgileri nereden alınır?</h3>
+      <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;">
+        Trendyol satıcı panelinizde Hesabım → API Entegrasyonu bölümünden alabilirsiniz. Detaylı rehber için <a href="/entegrasyon" style="color:#FF6B00;">entegrasyon sayfamızı</a> ziyaret edin.
+      </p>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:20px 0;">
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:10px;">Yorumlar otomatik güncellenir mi?</h3>
+      <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;">
+        Evet, haftalık otomatik güncelleme ile Trendyol'daki yeni yorumlar ikas mağazanıza eklenir.
+      </p>
+    </div>
+    <div style="padding:20px 0;">
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:10px;">ikas'ın hangi planlarında çalışır?</h3>
+      <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;">
+        Yorumbox tüm ikas planlarıyla uyumludur.
+      </p>
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ikas Trendyol Entegrasyonu — Eksiksiz Kılavuz",
+    "description": "ikas mağazanız için Trendyol entegrasyonu nasıl yapılır? API bağlantısı, ürün eşleştirme, yorum widget kurulumu.",
+    "author": { "@type": "Organization", "name": "Yorumbox" },
+    "publisher": { "@type": "Organization", "name": "Yorumbox", "url": "https://yorumbox.com" },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-04-14",
+    "url": "https://yorumbox.com/ikas-trendyol-entegrasyonu"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ikas Trendyol entegrasyonu ücretli mi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yorumbox ₺399'dan başlayan planlarla sunulmaktadır. 7 gün ücretsiz deneme mevcuttur." }
+      },
+      {
+        "@type": "Question",
+        "name": "Entegrasyon kurulumu ne kadar sürer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yaklaşık 5 dakika. Kod bilgisi gerekmez, kurulum tamamen otomatiktir." }
+      },
+      {
+        "@type": "Question",
+        "name": "Yorumlar otomatik güncellenir mi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Evet, haftalık otomatik güncelleme ile Trendyol'daki yeni yorumlar ikas mağazanıza eklenir." }
+      }
+    ]
+  }
+  </script>
 </main>
 
 <footer>
