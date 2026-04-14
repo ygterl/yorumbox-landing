@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/trendyol-yorum-ikas", "destination": "/trendyol-yorum-ikas.html" }
+    { "source": "/trendyol-yorum-ikas", "destination": "/trendyol-yorum-ikas.html" },
+    { "source": "/ikas-trendyol-entegrasyonu", "destination": "/ikas-trendyol-entegrasyonu.html" }
   ]
 }
