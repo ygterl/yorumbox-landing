@@ -186,8 +186,11 @@ h1 em { font-style: normal; color: var(--orange); }
 .mini-card-star { font-size: 11px; margin-bottom: 6px; transition: color 0.3s; }
 .mini-card-text { font-size: 11px; color: #555; line-height: 1.4; }
 
-.pricing-card { background: var(--dark); border: 1px solid rgba(255,107,0,0.3); border-radius: 24px; padding: 56px; max-width: 540px; margin: 64px auto 0; text-align: center; position: relative; overflow: hidden; }
+.pricing-cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+.pricing-card { background: var(--dark); border: 1px solid rgba(255,107,0,0.3); border-radius: 24px; padding: 56px; flex: 1; max-width: 360px; text-align: center; position: relative; overflow: hidden; }
 .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--orange); }
+.pricing-card--featured { border: 2px solid #FF6B00; position: relative; }
+.pricing-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #FF6B00; color: white; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 12px; white-space: nowrap; }
 .pricing-badge { display: inline-block; background: rgba(255,107,0,0.1); color: var(--orange); border: 1px solid rgba(255,107,0,0.25); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
 .pricing-name { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
 .pricing-price { font-family: 'Inter', sans-serif; font-size: 64px; font-weight: 700; color: var(--orange); letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
@@ -195,6 +198,8 @@ h1 em { font-style: normal; color: var(--orange); }
 .pricing-features { list-style: none; text-align: left; margin-bottom: 40px; }
 .pricing-features li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; display: flex; align-items: center; gap: 12px; }
 .pricing-features li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; }
+.pricing-features li.pricing-feature-no::before { content: '✗'; color: #aaa; }
+.pricing-feature-no { color: #aaa; }
 .pricing-trial { font-size: 13px; color: var(--muted); margin-top: 16px; }
 
 .cta-section { background: var(--orange); margin: 0 24px 80px; border-radius: 24px; padding: 80px 48px; text-align: center; }
@@ -212,7 +217,8 @@ footer a:hover { color: white; }
   nav { padding: 16px 20px; }
   .steps, .customize-grid { grid-template-columns: 1fr; }
   .widget-cards .widget-card:nth-child(2), .widget-cards .widget-card:nth-child(3) { display: none; }
-  .pricing-card { padding: 36px 24px; }
+  .pricing-cards { gap: 16px; }
+  .pricing-card { padding: 36px 24px; max-width: 100%; }
   .cta-section { padding: 48px 24px; margin: 0 12px 48px; }
   .screenshots-grid { grid-template-columns: 1fr !important; }
 }
@@ -610,193 +616,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="section" style="text-align:center">
   <div class="section-label">Fiyatlandırma</div>
-  <h2 class="section-title">Planlar</h2>
-  <div class="pricing-grid">
-
-    <!-- Başlangıç -->
-    <div class="pricing-card-new">
-      <div class="plan-name">Başlangıç</div>
-      <div class="plan-limit">100 adete kadar yorum</div>
-      <div class="plan-price">₺399</div>
-      <div class="plan-period">aylık · KDV dahil</div>
-      <ul class="plan-features">
-        <li>100 adete kadar yorum gösterimi</li>
-        <li>Slider widget</li>
-        <li>Yıldız puanı gösterimi</li>
-        <li>Fotoğraflı yorumlar</li>
-        <li>Otomatik kurulum</li>
-        <li>7 gün ücretsiz deneme</li>
-      </ul>
-      <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
-         class="plan-btn plan-btn-secondary"
-         target="_blank"
-         onclick="gtag('event','plan_click',{'event_label':'baslangic'});fbq('track','InitiateCheckout');">
-        Hemen Başla →
-      </a>
-      <p class="plan-trial">7 gün ücretsiz · İstediğin zaman iptal</p>
-    </div>
-
-    <!-- Büyüme (featured) -->
-    <div class="pricing-card-new featured">
-      <div class="popular-badge">En Popüler</div>
-      <div class="plan-name">Büyüme</div>
-      <div class="plan-limit">300 adete kadar yorum</div>
-      <div class="plan-price">₺599</div>
-      <div class="plan-period">aylık · KDV dahil</div>
-      <ul class="plan-features">
-        <li>300 adete kadar yorum gösterimi</li>
-        <li>Slider widget</li>
-        <li>Yıldız puanı gösterimi</li>
-        <li>Fotoğraflı yorumlar</li>
-        <li>Otomatik kurulum</li>
-        <li>7 gün ücretsiz deneme</li>
-      </ul>
-      <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
-         class="plan-btn plan-btn-primary"
-         target="_blank"
-         onclick="gtag('event','plan_click',{'event_label':'buyume'});fbq('track','InitiateCheckout');">
-        Hemen Başla →
-      </a>
-      <p class="plan-trial">7 gün ücretsiz · İstediğin zaman iptal</p>
-    </div>
-
-    <!-- Profesyonel -->
-    <div class="pricing-card-new">
-      <div class="plan-name">Profesyonel</div>
-      <div class="plan-limit">Sınırsız yorum</div>
-      <div class="plan-price">₺799</div>
-      <div class="plan-period">aylık · KDV dahil</div>
-      <ul class="plan-features">
+  <h2 class="section-title">İki sade plan</h2>
+  <p class="section-sub" style="margin:0 auto">Gizli ücret yok. İki plan, net fiyat. 7 gün ücretsiz dene.</p>
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <div class="pricing-badge">Lite</div>
+      <div class="pricing-name">Yorumbox Lite</div>
+      <div class="pricing-price">₺899</div>
+      <div class="pricing-period">yıllık · KDV hariç</div>
+      <ul class="pricing-features">
         <li>Sınırsız yorum gösterimi</li>
-        <li>Slider widget</li>
-        <li>Yıldız puanı gösterimi</li>
         <li>Fotoğraflı yorumlar</li>
+        <li>Haftalık otomatik güncelleme</li>
         <li>Otomatik kurulum</li>
-        <li>7 gün ücretsiz deneme</li>
+        <li>Widget özelleştirme</li>
+        <li class="pricing-feature-no">Widget üzerinde Yorumbox logosu görünür</li>
       </ul>
-      <a href="https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea"
-         class="plan-btn plan-btn-secondary"
-         target="_blank"
-         onclick="gtag('event','plan_click',{'event_label':'profesyonel'});fbq('track','InitiateCheckout');">
-        Hemen Başla →
-      </a>
-      <p class="plan-trial">7 gün ücretsiz · İstediğin zaman iptal</p>
+      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
+      <p class="pricing-trial">7 gün ücretsiz, kredi kartı gerekmez</p>
     </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-  <div class="section-label">SSS</div>
-  <h2 class="section-title">Sık Sorulan<br>Sorular</h2>
-
-  <div style="max-width:720px;margin:48px auto 0;">
-
-    <div style="border-bottom:1px solid
-      rgba(255,255,255,0.08);padding:24px 0;">
-      <h3 style="font-size:17px;font-weight:600;
-        margin-bottom:12px;cursor:pointer;">
-        Trendyol yorumlarını ikas mağazama
-        nasıl eklerim?
-      </h3>
-      <p style="font-size:15px;color:var(--muted);
-        line-height:1.7;">
-        Yorumbox uygulamasını ikas App Store'dan
-        kurun, Trendyol satıcı panelinizden API
-        bilgilerinizi alın ve girin, ardından
-        Trendyol ürünlerinizi ikas ürünleriyle
-        eşleştirin. Göstermek istediğiniz yorumları
-        seçin — kurulum 5 dakika sürer, kod
-        bilgisi gerekmez.
-      </p>
+    <div class="pricing-card pricing-card--featured">
+      <div class="pricing-featured-badge">ÖNERİLEN</div>
+      <div class="pricing-badge">Pro</div>
+      <div class="pricing-name">Yorumbox Pro</div>
+      <div class="pricing-price">₺2.499</div>
+      <div class="pricing-period">yıllık · KDV hariç</div>
+      <ul class="pricing-features">
+        <li>Sınırsız yorum gösterimi</li>
+        <li>Fotoğraflı yorumlar</li>
+        <li>Haftalık otomatik güncelleme</li>
+        <li>Otomatik kurulum</li>
+        <li>Widget özelleştirme</li>
+        <li>Yapay zeka ile yorum analizi</li>
+        <li>Yorumbox logosu yok</li>
+      </ul>
+      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
+      <p class="pricing-trial">7 gün ücretsiz, kredi kartı gerekmez</p>
     </div>
-
-    <div style="border-bottom:1px solid
-      rgba(255,255,255,0.08);padding:24px 0;">
-      <h3 style="font-size:17px;font-weight:600;
-        margin-bottom:12px;">
-        ikas Trendyol entegrasyonu nasıl çalışır?
-      </h3>
-      <p style="font-size:15px;color:var(--muted);
-        line-height:1.7;">
-        Yorumbox, Trendyol API'si aracılığıyla
-        mağazanızdaki ürünlerin yorumlarını çeker.
-        Siz hangi yorumların gösterileceğini
-        seçersiniz. Seçtiğiniz yorumlar ikas ürün
-        sayfalarınızda slider widget olarak
-        görünür. Haftalık otomatik güncelleme ile
-        yeni yorumlar otomatik eklenir.
-      </p>
-    </div>
-
-    <div style="border-bottom:1px solid
-      rgba(255,255,255,0.08);padding:24px 0;">
-      <h3 style="font-size:17px;font-weight:600;
-        margin-bottom:12px;">
-        Trendyol API bilgilerimi nereden alırım?
-      </h3>
-      <p style="font-size:15px;color:var(--muted);
-        line-height:1.7;">
-        Trendyol satıcı panelinize girin,
-        Hesabım → Mağaza Bilgileri → API
-        Entegrasyonu bölümünden Satıcı No,
-        API Key ve API Secret bilgilerinizi
-        alabilirsiniz. Detaylı rehber için
-        <a href="/entegrasyon"
-          style="color:var(--orange);">
-          entegrasyon sayfamızı
-        </a> ziyaret edin.
-      </p>
-    </div>
-
-    <div style="border-bottom:1px solid
-      rgba(255,255,255,0.08);padding:24px 0;">
-      <h3 style="font-size:17px;font-weight:600;
-        margin-bottom:12px;">
-        Yorumlar ne sıklıkla güncellenir?
-      </h3>
-      <p style="font-size:15px;color:var(--muted);
-        line-height:1.7;">
-        Yorumbox, Trendyol'daki yeni yorumlarınızı
-        haftalık olarak otomatik günceller.
-        İstediğinizde manuel güncelleme de
-        yapabilirsiniz.
-      </p>
-    </div>
-
-    <div style="border-bottom:1px solid
-      rgba(255,255,255,0.08);padding:24px 0;">
-      <h3 style="font-size:17px;font-weight:600;
-        margin-bottom:12px;">
-        Hangi ikas planlarıyla uyumludur?
-      </h3>
-      <p style="font-size:15px;color:var(--muted);
-        line-height:1.7;">
-        Yorumbox tüm ikas planlarıyla uyumludur.
-        Yorumbox'ın kendi planları ₺399'dan
-        başlar: Başlangıç (100 yorum),
-        Büyüme (300 yorum), Profesyonel
-        (sınırsız yorum). Tüm planlarda
-        7 gün ücretsiz deneme mevcuttur.
-      </p>
-    </div>
-
-    <div style="padding:24px 0;">
-      <h3 style="font-size:17px;font-weight:600;
-        margin-bottom:12px;">
-        Kurulum için teknik bilgi gerekiyor mu?
-      </h3>
-      <p style="font-size:15px;color:var(--muted);
-        line-height:1.7;">
-        Hayır. Yorumbox ikas mağazanıza otomatik
-        olarak kurulur, herhangi bir kod yazmanız
-        gerekmez. Widget scripti mağazanıza
-        otomatik eklenir.
-      </p>
-    </div>
-
   </div>
 </section>
 
