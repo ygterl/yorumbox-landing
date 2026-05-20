@@ -150,8 +150,11 @@ h1 em { font-style: italic; color: var(--orange); }
 .mini-card-star { font-size: 11px; margin-bottom: 6px; transition: color 0.3s; }
 .mini-card-text { font-size: 11px; color: #555; line-height: 1.4; }
 
-.pricing-card { background: var(--dark); border: 1px solid rgba(255,107,0,0.3); border-radius: 24px; padding: 56px; max-width: 540px; margin: 64px auto 0; text-align: center; position: relative; overflow: hidden; }
+.pricing-cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+.pricing-card { background: var(--dark); border: 1px solid rgba(255,107,0,0.3); border-radius: 24px; padding: 56px; flex: 1; max-width: 360px; text-align: center; position: relative; overflow: hidden; }
 .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--orange); }
+.pricing-card--featured { border: 2px solid #FF6B00; position: relative; }
+.pricing-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #FF6B00; color: white; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 12px; white-space: nowrap; }
 .pricing-badge { display: inline-block; background: rgba(255,107,0,0.1); color: var(--orange); border: 1px solid rgba(255,107,0,0.25); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
 .pricing-name { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
 .pricing-price { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700; color: var(--orange); letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
@@ -159,6 +162,8 @@ h1 em { font-style: italic; color: var(--orange); }
 .pricing-features { list-style: none; text-align: left; margin-bottom: 40px; }
 .pricing-features li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; display: flex; align-items: center; gap: 12px; }
 .pricing-features li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; }
+.pricing-features li.pricing-feature-no::before { content: '✗'; color: #aaa; }
+.pricing-feature-no { color: #aaa; }
 .pricing-trial { font-size: 13px; color: var(--muted); margin-top: 16px; }
 
 .cta-section { background: var(--orange); margin: 0 24px 80px; border-radius: 24px; padding: 80px 48px; text-align: center; }
@@ -176,7 +181,8 @@ footer a:hover { color: white; }
   nav { padding: 16px 20px; }
   .steps, .customize-grid { grid-template-columns: 1fr; }
   .widget-cards .widget-card:nth-child(2), .widget-cards .widget-card:nth-child(3) { display: none; }
-  .pricing-card { padding: 36px 24px; }
+  .pricing-cards { gap: 16px; }
+  .pricing-card { padding: 36px 24px; max-width: 100%; }
   .cta-section { padding: 48px 24px; margin: 0 12px 48px; }
 }
 </style>
@@ -344,24 +350,43 @@ footer a:hover { color: white; }
 
 <section class="section" style="text-align:center">
   <div class="section-label">Fiyatlandırma</div>
-  <h2 class="section-title">Şeffaf,<br>tek fiyat</h2>
-  <p class="section-sub" style="margin:0 auto">Gizli ücret yok. Kurulum ücreti yok.</p>
-  <div class="pricing-card">
-    <div class="pricing-badge">Profesyonel Plan</div>
-    <div class="pricing-name">Her şey dahil</div>
-    <div class="pricing-price">₺750</div>
-    <div class="pricing-period">aylık · KDV dahil</div>
-    <ul class="pricing-features">
-      <li>Sınırsız ürün eşleştirme</li>
-      <li>Sınırsız yorum gösterimi</li>
-      <li>Fotoğraflı yorumlar</li>
-      <li>Haftalık otomatik güncelleme</li>
-      <li>Otomatik kurulum</li>
-      <li>Renk, hız & düzen özelleştirme</li>
-      <li>E-posta destek</li>
-    </ul>
-    <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
-    <p class="pricing-trial">7 gün ücretsiz · İstediğiniz zaman iptal edebilirsiniz</p>
+  <h2 class="section-title">İki sade plan</h2>
+  <p class="section-sub" style="margin:0 auto">Gizli ücret yok. İki plan, net fiyat. 7 gün ücretsiz dene.</p>
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <div class="pricing-badge">Lite</div>
+      <div class="pricing-name">Yorumbox Lite</div>
+      <div class="pricing-price">₺899</div>
+      <div class="pricing-period">yıllık · KDV hariç</div>
+      <ul class="pricing-features">
+        <li>Sınırsız yorum gösterimi</li>
+        <li>Fotoğraflı yorumlar</li>
+        <li>Haftalık otomatik güncelleme</li>
+        <li>Otomatik kurulum</li>
+        <li>Widget özelleştirme</li>
+        <li class="pricing-feature-no">Widget üzerinde Yorumbox logosu görünür</li>
+      </ul>
+      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
+      <p class="pricing-trial">7 gün ücretsiz, kredi kartı gerekmez</p>
+    </div>
+    <div class="pricing-card pricing-card--featured">
+      <div class="pricing-featured-badge">ÖNERİLEN</div>
+      <div class="pricing-badge">Pro</div>
+      <div class="pricing-name">Yorumbox Pro</div>
+      <div class="pricing-price">₺2.499</div>
+      <div class="pricing-period">yıllık · KDV hariç</div>
+      <ul class="pricing-features">
+        <li>Sınırsız yorum gösterimi</li>
+        <li>Fotoğraflı yorumlar</li>
+        <li>Haftalık otomatik güncelleme</li>
+        <li>Otomatik kurulum</li>
+        <li>Widget özelleştirme</li>
+        <li>Yapay zeka ile yorum analizi</li>
+        <li>Yorumbox logosu yok</li>
+      </ul>
+      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
+      <p class="pricing-trial">7 gün ücretsiz, kredi kartı gerekmez</p>
+    </div>
   </div>
 </section>
 
