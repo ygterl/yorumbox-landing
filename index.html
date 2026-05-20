@@ -148,9 +148,9 @@ h1 em { font-style: normal; color: var(--orange); }
 .wc-stars { color: var(--orange); font-size: 12px; }
 .wc-text { font-size: 12px; color: #555; line-height: 1.5; margin-bottom: 10px; }
 
-.section { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+.section { padding: 48px 24px; max-width: 1100px; margin: 0 auto; }
 .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--orange); margin-bottom: 16px; font-weight: 600; }
-.section-title { font-family: 'Inter', sans-serif; font-size: clamp(30px, 4.5vw, 50px); font-weight: 700; letter-spacing: -0.3px; margin-bottom: 16px; line-height: 1.15; }
+.section-title { font-family: 'Inter', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 700; letter-spacing: -0.3px; margin-bottom: 16px; line-height: 1.15; }
 .section-sub { font-size: 17px; color: var(--muted); max-width: 440px; line-height: 1.6; }
 
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; }
@@ -187,20 +187,20 @@ h1 em { font-style: normal; color: var(--orange); }
 .mini-card-text { font-size: 11px; color: #555; line-height: 1.4; }
 
 .pricing-cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
-.pricing-card { background: var(--dark); border: 1px solid rgba(255,107,0,0.3); border-radius: 24px; padding: 56px; flex: 1; max-width: 360px; text-align: center; position: relative; overflow: hidden; }
+.pricing-card { background: var(--dark); border: 1px solid rgba(255,107,0,0.3); border-radius: 24px; padding: 24px 20px; flex: 1; max-width: 360px; text-align: center; position: relative; overflow: hidden; }
 .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--orange); }
 .pricing-card--featured { border: 2px solid #FF6B00; position: relative; }
 .pricing-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #FF6B00; color: white; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 12px; white-space: nowrap; }
 .pricing-badge { display: inline-block; background: rgba(255,107,0,0.1); color: var(--orange); border: 1px solid rgba(255,107,0,0.25); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
 .pricing-name { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-.pricing-price { font-family: 'Inter', sans-serif; font-size: 64px; font-weight: 700; color: var(--orange); letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
-.pricing-period { font-size: 14px; color: var(--muted); margin-bottom: 40px; }
-.pricing-features { list-style: none; text-align: left; margin-bottom: 40px; }
-.pricing-features li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; display: flex; align-items: center; gap: 12px; }
+.pricing-price { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; color: var(--orange); letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
+.pricing-period { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.pricing-features { list-style: none; text-align: left; margin-bottom: 20px; }
+.pricing-features li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px; display: flex; align-items: center; gap: 12px; }
 .pricing-features li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; }
 .pricing-features li.pricing-feature-no::before { content: '✗'; color: #aaa; }
 .pricing-feature-no { color: #aaa; }
-.pricing-trial { font-size: 13px; color: var(--muted); margin-top: 16px; }
+.pricing-trial { font-size: 11px; color: var(--muted); margin-top: 8px; }
 
 .cta-section { background: var(--orange); margin: 0 24px 80px; border-radius: 24px; padding: 80px 48px; text-align: center; }
 .cta-section h2 { font-family: 'Inter', sans-serif; font-size: clamp(28px, 4.5vw, 50px); font-weight: 700; letter-spacing: -0.3px; margin-bottom: 16px; line-height: 1.15; }
@@ -623,7 +623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="pricing-badge">Lite</div>
       <div class="pricing-name">Yorumbox Lite</div>
       <div class="pricing-price">₺899</div>
-      <div class="pricing-period">yıllık · KDV hariç</div>
+      <div class="pricing-period"><span style="background:#FF6B00;color:white;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px;">YILLIK</span> KDV hariç</div>
       <ul class="pricing-features">
         <li>Sınırsız yorum gösterimi</li>
         <li>Fotoğraflı yorumlar</li>
@@ -632,7 +632,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>Widget özelleştirme</li>
         <li class="pricing-feature-no">Widget üzerinde Yorumbox logosu görünür</li>
       </ul>
-      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
+      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:14px;padding:12px 24px" target="_blank">7 Gün Ücretsiz Başla →</a>
       <p class="pricing-trial">7 gün ücretsiz, kredi kartı gerekmez</p>
     </div>
     <div class="pricing-card pricing-card--featured">
@@ -640,7 +640,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="pricing-badge">Pro</div>
       <div class="pricing-name">Yorumbox Pro</div>
       <div class="pricing-price">₺2.499</div>
-      <div class="pricing-period">yıllık · KDV hariç</div>
+      <div class="pricing-period"><span style="background:#FF6B00;color:white;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px;">YILLIK</span> KDV hariç</div>
       <ul class="pricing-features">
         <li>Sınırsız yorum gösterimi</li>
         <li>Fotoğraflı yorumlar</li>
@@ -650,12 +650,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>Yapay zeka ile yorum analizi</li>
         <li>Yorumbox logosu yok</li>
       </ul>
-      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:17px;padding:18px" target="_blank">7 Gün Ücretsiz Başla →</a>
+      <a href="https://app.yorumbox.com" class="btn-primary" style="justify-content:center;width:100%;font-size:14px;padding:12px 24px" target="_blank">7 Gün Ücretsiz Başla →</a>
       <p class="pricing-trial">7 gün ücretsiz, kredi kartı gerekmez</p>
     </div>
   </div>
 
-  <div style="max-width:600px;margin:32px auto 0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:24px 28px;">
+  <div style="max-width:600px;margin:20px auto 0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:16px 20px;">
     <p style="font-size:13px;color:rgba(255,255,255,0.6);text-align:center;margin-bottom:20px;line-height:1.6;">
       ⚠️ Gösterilen fiyatlar 1 tam yıl fiyatlarıdır.<br>
       Ödenecek asıl fiyat, ödeme ekranında kalan mağaza lisans gününüz oranında hesaplanır.
